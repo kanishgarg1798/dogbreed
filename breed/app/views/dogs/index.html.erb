@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dog Image Finder</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <style>
+    /* Custom CSS for layout */
+    .form-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      transition: all 0.5s;
+    }
+
+    #dogForm {
+      width: 45%;
+    }
+
+    #dogImageContainer {
+      width: 50%;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    #dogImageContainer img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .shift-left {
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h1 class="mb-4">Dog Image Finder</h1>
+        <div class="form-container" id="formContainer">
+          <%= form_tag fetch_dog_image_path, method: :post, remote: true, id: 'dogForm' do %>
+            <div class="input-group mb-3">
+              <%= text_field_tag :breed, nil, placeholder: 'Breed Name', id: 'breedInput', class: 'form-control' %>
+              <div class="input-group-append">
+                <%= submit_tag 'Fetch Image', class: 'btn btn-primary', id: 'fetchImageBtn' %>
+              </div>
+            </div>
+          <% end %>
+          <div id="dogImageContainer" class="mt-4"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

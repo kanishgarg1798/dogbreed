@@ -1,0 +1,10 @@
+<% if @dog_image.present? %>
+  // Insert the fetched image
+  $('#dogImageContainer').html('<img src="<%= @dog_image %>" alt="Dog Image">');
+  $('#dogImageContainer').append('<p><strong>Breed:</strong> <%= params[:breed] %></p>');
+  // Show the image container and shift the form to the left
+  $('#dogImageContainer').css('opacity', '1');
+  $('#formContainer').addClass('shift-left');
+<% else %>
+  $('#dogImageContainer').html('<p>No image found for this breed.</p>');
+<% end %>
