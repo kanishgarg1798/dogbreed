@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
+1. Clone the repository:
+https://github.com/kanishgarg1798/dogbreed.git
 
-Things you may want to cover:
+## Files
+1. dogs_controller.rb
+2. /views/dogs/index.html.erb
+3. /views/dogs/index.js.erb
 
-* Ruby version
+## Navigate to the link
+localhost:3000/dogs
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
